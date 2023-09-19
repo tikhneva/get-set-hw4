@@ -321,10 +321,10 @@ public:
         return memory;
     }
 
-    void SetCamera(int cam) {
-        if (cam >= 1 && cam <= 2)
+    void SetCamera(int c) {
+        if (c >= 1 && c <= 2)
         {
-            cameras_count = cam;
+            cameras_count = c;
         }
         else
         {
