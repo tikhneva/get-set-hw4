@@ -1,17 +1,15 @@
-﻿#include <iostream>
+#include <iostream>
 #include <string>
 #include <ctime>
 using namespace std;
 
 class Parrot {
-public: 
-    string nick;
-    string plumage_color;
-    string eyes_color;
-
 private:
     int wings;
     int legs_count;
+    string nick;
+    string plumage_color;
+    string eyes_color;
 
 public:
     void SetWings(int w) {
@@ -42,6 +40,26 @@ public:
         return legs_count;
     }
 
+    void SetNick(string n) {
+            nick = n;
+    }
+    string GetNick() const {
+        return nick;
+    }
+
+    void SetPlumage(string p) {
+        plumage_color = p;
+    }
+    string GetPlumage() const {
+        return plumage_color;
+    }
+
+    void SetEyes(string e) {
+        eyes_color = e;
+    }
+    string GetEyes() const {
+        return eyes_color;
+    }
 
     void MakeNoize() {
         cout << "ARH!\n";
@@ -64,19 +82,45 @@ public:
     }
 };
 
-class Human { 
-public: 
+class Human {
+private:
     string name;
     string eyes_color;
     string hair_color;
     string skill;
-    
-private:    
-    double heigh; 
-    double beauty; 
+    double heigh;
+    double beauty;
     double foot_size;
 
 public:
+    void SetName(string n) {
+        name = n;
+    }
+    string GetName() const {
+        return name;
+    }
+
+    void SetEye(string e) {
+        eyes_color = e;
+    }
+    string GetEye() const {
+        return eyes_color;
+    }
+
+    void SetHair(string h) {
+        hair_color = h;
+    }
+    string GetHair() const {
+        return hair_color;
+    }
+
+    void SetSkill(string s) {
+        skill = s;
+    }
+    string GetSkill() const {
+        return skill;
+    }
+
     void SetHeigh(double h) {
         if (h == 163)
         {
@@ -92,7 +136,7 @@ public:
     }
 
     void SetBeauty(double b) {
-        if (b >=100)
+        if (b >= 100)
         {
             beauty = b;
         }
@@ -131,30 +175,42 @@ public:
         cout << "*Àë³ñà ãîòóº ñìà÷íó ñòðàâó äëÿ ïîäðóãè*" << pasta << "\n";
     }
 
-    void Lateness() { 
+    void Lateness() {
         cout << "âèáà÷òå çà çàï³çíåííÿ\n";
     }
 
-    void Hobby() { 
+    void Hobby() {
         cout << "äàâàé ñþäè ñâîþ ëàïöþ\n";
     }
 };
 
-class Room { 
-public:
+class Room {
+private:
     string location;
     string size;
-
-private:
     int window_count;
-    int residents_count;   
-    double comfort; 
+    int residents_count;
+    double comfort;
 
 public:
-    void SetWindow(int ww) {
-        if (ww == 1)
+    void SetLocation(string l) {
+        location = l;
+    }
+    string GetLocation() const {
+        return location;
+    }
+
+    void SetSize(string s) {
+        size = s;
+    }
+    string GetSize() const {
+        return size;
+    }
+
+    void SetWindow(int w) {
+        if (w == 1)
         {
-            window_count = ww;
+            window_count = w;
         }
         else
         {
@@ -201,11 +257,11 @@ public:
         cout << "knock bdjsdchk!\n";
     }
 
-    void Food(string ramyeon) { 
+    void Food(string ramyeon) {
         cout << "äåñü á³ëÿ ðàêîâèíè º ðàìüîí" << ramyeon << "\n";
     }
 
-    void AirConditioner() { 
+    void AirConditioner() {
         cout << "ôøøøøøø\n";
     }
 
@@ -215,17 +271,28 @@ public:
 };
 
 class Phone {
-public:
-    string phone_model = "IPhone 13 mini";
-    string color = "blue";
-
 private:
-    double display_diagonol; 
-    double memory; 
+    string phone_model;
+    string color;
+    double display_diagonol;
+    double memory;
     int cameras_count;
-    
 
 public:
+    void SetModel(string m) {
+        phone_model = m;
+    }
+    string GetModel() const {
+        return phone_model;
+    }
+
+    void SetColor(string c) {
+        color = c;
+    }
+    string GetColor() const {
+        return color;
+    }
+
     void SetDisplay(double d) {
         if (d == 5.4)
         {
@@ -284,23 +351,48 @@ public:
         cout << "âõ³äíèé äçâ³íîê\n";
     }
 
-    void Music() { 
+    void Music() {
         cout << "I feel the rush" << "\n" << "Addicted to your touch\n";
     }
 };
 
-class Music {  
-public:
-    
+class Music {
+private:
     string song_name;
     string kind_of_song;
     string song_author;
     string song_language;
-    
-private:
     int song_release;
 
 public:
+    void SetSongName(string n) {
+        song_name = n;
+    }
+    string GetSongName() const {
+        return song_name;
+    }
+
+    void SetSongKind(string k) {
+        kind_of_song = k;
+    }
+    string GetSongKind() const {
+        return kind_of_song;
+    }
+
+    void SetAuthor(string a) {
+        song_author = a;
+    }
+    string GetAuthor() const {
+        return song_author;
+    }
+
+    void SetLanguage(string l) {
+        song_language = l;
+    }
+    string GetLanguage() const {
+        return song_language;
+    }
+
     void SetSongRelease(int s) {
         if (s == 2022)
         {
@@ -315,23 +407,23 @@ public:
         return song_release;
     }
 
-    void Lyrics() { 
+    void Lyrics() {
         cout << "How could I forget" << "\n" << "The day you lied to me\n";
     }
 
-    void Melody() { 
+    void Melody() {
         cout << "â³äòâîðþºòüñÿ ïðèºìíà ìåëîä³ÿ\n";
     }
 
-    void Mood() { 
+    void Mood() {
         cout << "ÿêà ÷óäîâà ï³ñíÿ\n";
     }
 
-    void Vocabulary() { 
+    void Vocabulary() {
         cout << "î, íîâå ñëîâî\n";
     }
 
-    void Headphones() { 
+    void Headphones() {
         cout << "*ïîêà÷óþ ãîëîâîþ ó ðèòì ìóçèêè*\n";
     }
 };
@@ -339,7 +431,7 @@ public:
 int main()
 {
     Parrot myParrot;
-    myParrot.wings = 40; 
+    myParrot.wings = 40;
     myParrot.legs_count = 2;
     myParrot.nick = "Sarah";
     myParrot.plumage_color = "red";
@@ -353,7 +445,7 @@ int main()
     myHuman.eyes_color = "green";
     myHuman.hair_color = "light brown";
     myHuman.skill = "luck";
-    
+
     Roomm myRoom;
     myRoom.window_count = 1;
     myRoom.residents_count = 2;
@@ -377,4 +469,3 @@ int main()
 
 
 }
-
